@@ -1,0 +1,28 @@
+Ahmed Khalid		Nuaimi		Sunni		Adhamiya	Liberal			USA
+Ahmed Rami		Anbari		Shi'i		?		Moderate		Jordan
+Bilal Rashid		Ta'ii		Sunni		Adhamiya	Conservative		London
+Noor Dillawir		?		Sunni-Kurd	Adhamiya	Conservative		Iraq
+Tabarak Dhiyaa		?		Sunni		?		Conservative		Iraq
+Amjaad Abdulhadi	?		Shi'i		Sha'ab		Moderate 		USA
+Raghad Safi		?		Sunni		Mansur		Moderate		Georgia
+Hiba Ahmed		?		Sunni		Ghazaliya	Conservative		Iraq?
+Siba Hani 		Noori		Shi'i?		Zayoona		Conservative		UAE
+Saad Ghassan Zako	?		Sunni		Mansur		Moderate		Malaysia
+Hayder Adil		Samarra'ie	Sunni		Jami'aa		Moderate		Malaysia
+Hayder Ali		Abu Khumra	Shi'i		Mansur		Moderate		Sweden
+Furat Hadi		?		Shi'i		?		Conservative		Iraq
+Mohammed Abduljabbar	?		Shi'i		Dora		Conservative		Iraq
+Nemir Dhiyaa		Mudarris	Sunni-Turkmen	?		Moderate 		Turkey
+Yahya Ghassan		?		Sunni		?		Conservative		Deceased
+Saif Salih Mahdi	al-Yassin	Shi'i		Karrada		Conservative		Deceased
+Ninos Adam Samuel	?		Christian	?		Moderate		Deceased
+Eihab Bahjat		?		Shi'i		Karbala		Liberal 		Deceased
+Sadiq Thamir Hadi	al-Milih	Shi'i		Zayoona		Moderate		USA
+Ali Adil		?		Sunni		Dora		Liberal			Iraq	
+Zaid Mahmoud		al-Timeemi	Shi'i		Kasra		Conservative		Iraq
+Sherif Farouq 		al-Kaysi	Sunni		Bakr		Moderate		USA
+Karam Majid		?		Christian	Zayoona?	Moderate		Kurdistan
+Saif Farooq		al-Hadban	Sunni		Jami'aa		Conservative		Iraq
+Saad Sahir		?		Christian	?		Moderate		USA
+Anita Semerjian		Semerjian	Christian	52?		Moderate		Canada
+Ali Shukur		?		Shi'i		?		?			?

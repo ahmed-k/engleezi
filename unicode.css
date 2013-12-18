@@ -1,0 +1,40 @@
+h2 {
+text-align:center;
+font-family: 'Roboto Slab';
+font-size:	40px;
+}
+#closeup {
+width: 100px;
+height:200px;
+border: 1px solid black; 
+}
+#english {
+	width:500px;
+	height:200px; 
+	float:right; 
+	border: 1px solid black; 
+	word-wrap: break-word; 
+	font-size: 25px;
+	display: block; 
+	overflow: scroll; 
+
+}
+table 
+{
+padding-left:50px;
+padding-top:20px;
+}
+td {
+	border: 2px solid black; 
+	text-align:center;
+	font-size: 45px;
+	width: 70px; 
+	height: 90px;
+} 
+#rowhead {
+	border:none; 
+	font-family: 'Roboto Slab', serif;	
+}
+
+
+
