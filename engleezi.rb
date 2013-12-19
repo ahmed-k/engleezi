@@ -2,48 +2,24 @@
 #encoding: utf-8
 ##THIS SCRIPT CONVERTS FILENAMES IN ARABIC TO THEIR EQUIVALENT IN ENGLISH#
 require 'fileUtils'
+include FileUtils
 
-if ARGV.length > 1
-       	abort "ERROR: invalid number of arguments\n"
-end
-
-if ARGV.length == 0
-	puts "\nSearching all directories and subdirectories..." 
-	3.times puts "\n"
-
-Dir['**'].each do |r|
-       puts r + "listing for now!"
-end
-
-
-else 
-argument  = ARGV.at(0)
-
-if File.exist?(argument)  
-	if File.directory?(argument) 
-		puts "#{argument} is a directory" 
-	else 
-	puts "File #{argument} exists"
+def convert (arg) 
+	newname=""
+	matchstring = /.*\p{Arabic}+.*/.match(arg)
+	if matchstring.nil?
+		puts "No Arabic characters matched for:  " +  arg
+	else 	
+		matchstring[0].each_char do |ch| 
+			newname << englify(ch.ord) 
+		end 
+			File.rename(arg, newname)
+			puts "Converted #{arg} to #{newname}"
 	end 
-else 
-	puts "#{argument} doesn't exist"
 end 
 
-match = /.*\p{Arabic}+.*/.match(argument)
-if match.nil?
-	puts "Nil match found for argument " 
-else 
-	puts "Match found, Argument is:  " + match[0]
+def englify (c) 
 
-end
-
-4.times 
-puts "\n"
-
-newname=""
-match[0].each_char do |c|
-	c=c.ord
-	print "#{c} is c" 
 case c
 when (1536...1791) 
 	case c  
@@ -112,31 +88,13 @@ when (1536...1791)
 	when 1669 then c="kh"
 	when 1670 then c="ch"
 	when 1671 then c="CH"
-	when 1672 then c="D"
-	when 1673 then c="d"
-	when 1674 then c="d"
-	when 1675 then c="DH"
-	when 1676 then c="DH"
-	when 1677 then c="DH"
-	when 1678 then c="D"
-	when 1679 then c="d"
-	when 1680 then c="D"
+	when 1672, 1678, 1680 then c="D"
+	when 1673, 1674, 1769 then c="d"
+	when (1675..1678),1696 then c="DH"
 	when 1681 then c="R"
-	when 1682 then c="r"
-	when 1683 then c="r"
-	when 1684 then c="r"
-	when 1685 then c="r"
-	when 1686 then c="r"
-	when 1687 then c="r"
-	when 1688 then c="J"
-	when 1689 then c="J"
-	when 1690 then c="S"
-	when 1691 then c="S"
-	when 1692 then c="S"
-	when 1693 then c="S"
-	when 1694 then c="S"
-	when 1695 then c="S"
-	when 1696 then c="DH"
+	when (1682..1688) then c="r"
+	when 1688, 1689 then c="J"
+	when (1690..1696) then c="S"
 	when 1697 then c="gh"
 	when 1698 then c="v"
 	when 1699 then c="v"
@@ -198,8 +156,47 @@ when (1536...1791)
 	else c=""
 	end
 end
-	puts " converted to #{c} "
-	newname<<c
+c
 end 
-puts "New name is #{newname}" 
+
+def dir_rename(path)
+	puts "Entering #{path}"
+	Dir.glob(File.expand_path(path)+"/*").each do |f|
+		puts f 
+		if File.directory?(f) 
+			dir_rename(f)
+		end 
+			convert f
+		end
+	end
+end
+
+if ARGV.length > 1
+       	abort "ERROR: invalid number of arguments\n"
+end
+
+if ARGV.length == 0
+	puts "\nSearching all directories and subdirectories in #{Dir.pwd}" 
+	3.times 
+	puts "\n"
+
+Dir['**'].each do |r|
+	dir_rename(File.expand_path(".") + "/" + r)
+end
+
+else 
+arg  = ARGV.at(0)
+
+if File.exist?(arg)  
+	if File.directory?(arg) 
+		puts "#{arg} is a directory" 
+		dir_rename(File.expand_path(arg))
+	else 
+	puts "File #{arg} found"
+	convert(arg,File.expand_path(".")) 
+	end 
+else 
+	puts "#{arg} not found"
+end 
+
 end 
