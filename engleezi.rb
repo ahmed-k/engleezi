@@ -163,12 +163,11 @@ def dir_rename(path)
 	puts "Entering #{path}"
 	Dir.glob(File.expand_path(path)+"/*").each do |f|
 		puts f 
+			convert f
 		if File.directory?(f) 
 			dir_rename(f)
 		end 
-			convert f
 		end
-	end
 end
 
 if ARGV.length > 1
